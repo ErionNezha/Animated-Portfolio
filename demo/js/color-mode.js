@@ -30,10 +30,9 @@ function saveColorMode() {
   updateToggleButton();
 }
 
-function updateToggleButton() {
-  if (root.classList.contains("dark-mode")) {
-    toggleButton.style.backgroundImage = "var(--moon)";
-  } else {
-    toggleButton.style.backgroundImage = "var(--sun)";
-  }
-}
+// NOTE: the toggle icon is styled purely by CSS (#toggle-button and
+// .dark-mode #toggle-button rules in color-mode.css). Setting
+// backgroundImage to "var(--sun)"/"var(--moon)" inline here used to resolve
+// the url() relative to the document instead of the stylesheet, 404ing the
+// icon — so this is intentionally a no-op now.
+function updateToggleButton() {}
